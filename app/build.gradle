@@ -16,7 +16,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -27,10 +27,46 @@ android {
         }
     }
 
+    signingConfigs {
+        debug {
+            keyAlias 'Arash'
+            keyPassword '******'
+            storeFile rootProject.file("app/ArashAltafiAndroid.jks")
+            storePassword '******'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            keyAlias 'Arash'
+            keyPassword '******'
+            storeFile rootProject.file("app/ArashAltafiAndroid.jks")
+            storePassword '******'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.release
+            debuggable false
+            crunchPngs true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+            ndk { abiFilters "armeabi-v7a", "arm64-v8a" }
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            versionNameSuffix "-debug"
+            applicationIdSuffix ".debug"
+            debuggable true
+            crunchPngs false
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk { abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64" }
         }
     }
 
