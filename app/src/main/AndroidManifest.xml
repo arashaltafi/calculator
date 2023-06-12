@@ -30,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="pushe_token"
+            android:value="cWQyajkyd3Y4anc1OTRsZ0BraHlANDE3NzY5NjI5ODQy"/>
     </application>
 
 </manifest>
