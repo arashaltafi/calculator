@@ -10,10 +10,10 @@
   
   <tr>
     <td>
-      <img src="/screen_shot/2.png" alt="Image 1" title="Image 1" style="width: 100%;">
+      <img src="/screen_shot/2.jpg" alt="Image 1" title="Image 1" style="width: 100%;">
     </td>
     <td>
-      <img src="/screen_shot/3.png" alt="Image 2" title="Image 2" style="width: 100%;">
+      <img src="/screen_shot/3.jpg" alt="Image 2" title="Image 2" style="width: 100%;">
     </td>
   </tr>
  
